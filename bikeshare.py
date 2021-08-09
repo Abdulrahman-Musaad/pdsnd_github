@@ -17,7 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
 
-    
+
     # This part gets the user input for city (chicago, new york city, washington).
     print('First step is to enter the name of the city to analyze. There are three cities: \n - chicago \n - new york city \n - washington')
     city = input ('Enter the name of the city  to analyze: ')
@@ -134,6 +134,7 @@ def station_stats(df):
     # TO DO: display most commonly used start station
     popular_start_station = df['Start Station'].mode()[0]
     print (' The most commonly used start station is: {}'. format (popular_start_station))
+
     # TO DO: display most commonly used end station
     popular_end_station = df['End Station'].mode()[0]
     print (' The most commonly used end station is: {}'. format (popular_end_station))
@@ -164,6 +165,7 @@ def trip_duration_stats(df):
     average_travel_time= df['Trip Duration'].mean()
     average_in_min=average_travel_time//60
     average_in_sec=average_travel_time % 60
+    
     print ('the average travel time is: {} minutes and {} seconds'. format(average_in_min,average_in_sec))
 
 
