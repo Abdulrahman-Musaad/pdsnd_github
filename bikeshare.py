@@ -195,7 +195,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+# main function which will run the other functions in order
 def main():
     while True:
         city, month, day = get_filters()
@@ -206,10 +206,11 @@ def main():
         user_stats(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
-
+        # This part is to handle invalid user inputs
         while restart.lower() !='yes' and restart.lower() !='yes':
             print ('This is invalid input')
             restart = input('\nWould you like to restart? Enter yes or no.\n')
+        # This part is to restart or stop based in user input
         if restart.lower() != 'yes':
             break
 
