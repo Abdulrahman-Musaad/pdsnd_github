@@ -92,7 +92,7 @@ def time_stats(df,month,day):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    # This part is to display the most common month
 
     if month == 'all':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
@@ -103,14 +103,14 @@ def time_stats(df,month,day):
         print ( 'If you choosed to apply no filter by month you can see The most common month')
 
 
-    # TO DO: display the most common day of week
+    # This part is to display the most common day of week
     if day == 'all':
         popular_day = df['day_of_week'].mode()[0]
         print ('The most common day is: {}'. format(popular_day))
     else:
         print ( 'If you choosed to apply no filter by day you can see The most common day')
 
-    # TO DO: display the most common start hour
+    # This part is to display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print ('The most common hour is: {}'. format(popular_hour))
@@ -126,14 +126,14 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # This part is to display most commonly used start station
     popular_start_station = df['Start Station'].mode()[0]
     print (' The most commonly used start station is: {}'. format (popular_start_station))
-    # TO DO: display most commonly used end station
+    # This part is to display most commonly used end station
     popular_end_station = df['End Station'].mode()[0]
     print (' The most commonly used end station is: {}'. format (popular_end_station))
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # This part is to display most frequent combination of start station and end station trip
     df['combination of stations']='Starts from: '+df['Start Station']+ ' and ends at: ' + df['End Station']
     popular_combination_stations=df['combination of stations'].mode()[0]
 
@@ -147,7 +147,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # This part is to display total travel time
     tot_time_sec= sum ( df['Trip Duration'])
     tot_time_hrs= int(tot_time_sec // (60*60))
     tot_time_min= int((tot_time_sec % (60*60)) // 60)
@@ -155,7 +155,7 @@ def trip_duration_stats(df):
 
     print ('total travel time is: {} hours, {} minutes and {} seconds'. format(tot_time_hrs,tot_time_min,tot_time_rem_sec))
 
-    # TO DO: display mean travel time
+    # This part is to display mean travel time
     average_travel_time= df['Trip Duration'].mean()
     average_in_min=average_travel_time//60
     average_in_sec=average_travel_time % 60
@@ -172,19 +172,19 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+    # This part is to display counts of user types
     print ('The counts of user types are as follow:')
     user_types = df.groupby(['User Type'])['User Type'].count()
     print(user_types)
 
 
-    # TO DO: Display counts of gender
+    # This part is to display counts of gender
     print ('The counts of user gender are as follow:')
     user_gender = df.groupby(['Gender'])['Gender'].count()
     print(user_gender)
 
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # This part is to display earliest, most recent, and most common year of birth
     earliest_birth_year=df['Birth Year'].min()
     recent_birth_year=df['Birth Year'].max()
     common_birth_year=df['Birth Year'].mode()[0]
