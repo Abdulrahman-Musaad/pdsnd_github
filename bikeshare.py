@@ -16,31 +16,36 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!\n')
-    # This part gets the user input for city (chicago, new york city, washington).
 
+    
+    # This part gets the user input for city (chicago, new york city, washington).
     print('First step is to enter the name of the city to analyze. There are three cities: \n - chicago \n - new york city \n - washington')
     city = input ('Enter the name of the city  to analyze: ')
+
     # This part is to handle invalid inputs for city
     while city !='chicago' and city !='washington' and city !='new york city':
         print ('You selected {} which is not a city in our data or misspelled.'. format(city))
         city = input ("Please type with correct spelling as 'chicago', 'new york city' or 'washington': ")
 
+
     # This part gets the user input for month (all, january, february, ... , june)
     monthss = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     print ('Months in recoreds are:', ' '.join(monthss[0:-1]) )
     month = input ('Enter the name of the month to filter by, or "all" to apply no month filte: ')
+
     # This part is to handle invalid inputs for month
     while month not in monthss:
         print('It looks like you entered a month that is not in the record or you misspelled it')
         print ('months in recoreds are:', ' '.join(monthss[0:-1]))
         month = input ('type name of the month to filte by or or "all" to apply no month filter: ')
 
+
     # This part gets the user input for day of week (all, monday, tuesday, ... sunday)
     days_names = ['monday' , 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
     day = input ('name of the day of week to filter by, or "all" to apply no day filter: ')
+
     # This part is to handle invalid inputs for day
     while day not in days_names:
-        #print('you typed an invalid day name as : {}.'. format(day))
         print('name of the day of week to filter by as', ' '.join(days_names[0:-1]))
         day = input ('name of the day of week to filter by, or "all" to apply no day filter: ')
 
